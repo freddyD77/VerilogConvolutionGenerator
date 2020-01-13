@@ -1,0 +1,1347 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.45;
+1.45
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "multi_64_33_9_10_16_8";
+multi_64_33_9_10_16_8
+set SRC_FILE "multi_64_33_9_10_16_8.sv";
+multi_64_33_9_10_16_8.sv
+# If you have multiple source files, change the line above to list them all like this:
+# set SRC_FILE [list "file1.sv" "file2.sv"];
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./multi_64_33_9_10_16_8.sv
+Compiling source file ./multi_64_33_9_10_16_8.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'multi_64_33_9_10_16_8'.
+Information: Building the design 'layer1_64_33_16_4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer2_32_9_16_2'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer3_24_9_16_1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'controlpath_64_33_16_4'. (HDL-193)
+
+Inferred memory devices in process
+	in routine controlpath_64_33_16_4 line 49 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| pipeline_delay_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    s_ready_x_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    m_valid_y_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   bias_addr_x_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    clear_acc_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     en_acc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     x_state_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    acc_state_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     L_cntr_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    acc_addr_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_64_33_16_4'. (HDL-193)
+
+Statistics for case statements in always block at line 166 in file
+	'./multi_64_33_9_10_16_8.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           202            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'controlpath_32_9_16_2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine controlpath_32_9_16_2 line 356 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| pipeline_delay_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    s_ready_x_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    m_valid_y_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   bias_addr_x_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    clear_acc_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     en_acc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     x_state_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    acc_state_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     L_cntr_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    acc_addr_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_32_9_16_2'. (HDL-193)
+
+Statistics for case statements in always block at line 467 in file
+	'./multi_64_33_9_10_16_8.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           487            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'controlpath_24_10_16_1'. (HDL-193)
+
+Inferred memory devices in process
+	in routine controlpath_24_10_16_1 line 615 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| pipeline_delay_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    s_ready_x_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    m_valid_y_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   bias_addr_x_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    clear_acc_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     en_acc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     x_state_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    acc_state_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     L_cntr_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    acc_addr_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_24_10_16_1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'memory_64_33_16_4' instantiated from design 'datapath_64_33_16_4' with
+	the parameters "64,6". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_64_33_16_4_SIZE64_LOGSIZE6 line 263 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+================================================================================
+|           block name/line             | Inputs | Outputs | # sel inputs | MB |
+================================================================================
+| memory_64_33_16_4_SIZE64_LOGSIZE6/264 |   64   |   16    |      6       | N  |
+================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_64_33_16_4_f_rom'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_8.sv:218: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:219: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:221: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:223: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:224: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:226: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:227: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:231: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:232: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:233: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:237: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:243: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:244: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:248: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:249: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:250: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 216 in file
+	'./multi_64_33_9_10_16_8.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           217            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_64_33_16_4_f_rom line 216 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_64_33_16_4' instantiated from design 'datapath_64_33_16_4' with
+	the parameters "32,6". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_64_33_16_4_SIZE32_LOGSIZE6 line 263 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+================================================================================
+|           block name/line             | Inputs | Outputs | # sel inputs | MB |
+================================================================================
+| memory_64_33_16_4_SIZE32_LOGSIZE6/264 |   32   |   16    |      5       | N  |
+================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mult_acc_64_33_16_4'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_8.sv:293: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:299: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_acc_64_33_16_4 line 282 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| pipeline_delay_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        f_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    valid_out_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sum_count_reg    | Flip-flop |  33   |  Y  | N  | N  | N  | N  | N  | N  |
+|     product_reg     | Flip-flop |  38   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_32_9_16_2' instantiated from design 'datapath_32_9_16_2' with
+	the parameters "32,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_32_9_16_2_SIZE32_LOGSIZE5 line 522 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===============================================================================
+|           block name/line            | Inputs | Outputs | # sel inputs | MB |
+===============================================================================
+| memory_32_9_16_2_SIZE32_LOGSIZE5/523 |   32   |   16    |      5       | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_32_9_16_2_f_rom'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_8.sv:502: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:503: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:505: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:507: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:509: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 499 in file
+	'./multi_64_33_9_10_16_8.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           500            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_32_9_16_2_f_rom line 499 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_32_9_16_2' instantiated from design 'datapath_32_9_16_2' with
+	the parameters "24,6". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_32_9_16_2_SIZE24_LOGSIZE6 line 522 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mult_acc_32_9_16_2'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_8.sv:552: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:558: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_acc_32_9_16_2 line 541 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| pipeline_delay_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        f_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    valid_out_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sum_count_reg    | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     product_reg     | Flip-flop |  36   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_24_10_16_1' instantiated from design 'datapath_24_10_16_1' with
+	the parameters "24,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_24_10_16_1_SIZE24_LOGSIZE5 line 752 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_24_9_16_1_f_rom'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_8.sv:731: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:733: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:735: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:736: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:737: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:738: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 728 in file
+	'./multi_64_33_9_10_16_8.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           729            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_24_9_16_1_f_rom line 728 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_24_10_16_1' instantiated from design 'datapath_24_10_16_1' with
+	the parameters "15,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_24_10_16_1_SIZE15_LOGSIZE5 line 752 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+================================================================================
+|           block name/line             | Inputs | Outputs | # sel inputs | MB |
+================================================================================
+| memory_24_10_16_1_SIZE15_LOGSIZE5/753 |   16   |   16    |      4       | N  |
+================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mult_acc_24_10_16_1'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_8.sv:782: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_8.sv:788: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_acc_24_10_16_1 line 771 in file
+		'./multi_64_33_9_10_16_8.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| pipeline_delay_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        f_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    valid_out_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    sum_count_reg    | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|     product_reg     | Flip-flop |  36   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset s_data_in_x[15] s_data_in_x[14] s_data_in_x[13] s_data_in_x[12] s_data_in_x[11] s_data_in_x[10] s_data_in_x[9] s_data_in_x[8] s_data_in_x[7] s_data_in_x[6] s_data_in_x[5] s_data_in_x[4] s_data_in_x[3] s_data_in_x[2] s_data_in_x[1] s_data_in_x[0] s_valid_x m_ready_y}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{s_data_in_x[15] s_data_in_x[14] s_data_in_x[13] s_data_in_x[12] s_data_in_x[11] s_data_in_x[10] s_data_in_x[9] s_data_in_x[8] s_data_in_x[7] s_data_in_x[6] s_data_in_x[5] s_data_in_x[4] s_data_in_x[3] s_data_in_x[2] s_data_in_x[1] s_data_in_x[0] s_valid_x m_ready_y}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+# set delay for inputs to be 0.2ns
+set_input_delay 0.2 -max -clock clk $INPUTS
+1
+set_output_delay 0.2 -max -clock clk [all_outputs]
+1
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 27 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/NangateOpenCellLibrary_typical.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy conv1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mycontrolpath before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mydatapath before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mycontrolpath before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mydatapath before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv3/mycontrolpath before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv3/mydatapath before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mydatapath/my_rom before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mydatapath/memY before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mydatapath/memY1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mydatapath/memY2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv1/mydatapath/memY3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mydatapath/memX before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mydatapath/my_rom before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mydatapath/memY before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mydatapath/memX1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv2/mydatapath/memY1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv3/mydatapath/memX before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv3/mydatapath/my_rom before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy conv3/mydatapath/memY before Pass 1 (OPT-776)
+Information: Ungrouping 22 of 34 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'multi_64_33_9_10_16_8'
+Information: Added key list 'DesignWare' to design 'multi_64_33_9_10_16_8'. (DDB-72)
+Information: The register 'conv1/mycontrolpath/x_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mycontrolpath/x_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mycontrolpath/x_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[14]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[13]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[12]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[11]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[10]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[9]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv1/mydatapath/my_rom/z_reg[8]' is removed because it is merged to 'conv1/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[14]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[13]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[12]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[11]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[10]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[9]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv2/mydatapath/my_rom/z_reg[8]' is removed because it is merged to 'conv2/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[14]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[13]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[12]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[11]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[10]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[9]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_8', the register 'conv3/mydatapath/my_rom/z_reg[8]' is removed because it is merged to 'conv3/mydatapath/my_rom/z_reg[15]'. (OPT-1215)
+ Implement Synthetic for 'multi_64_33_9_10_16_8'.
+  Processing 'memory_64_33_16_4_SIZE64_LOGSIZE6_0'
+ Implement Synthetic for 'memory_64_33_16_4_SIZE64_LOGSIZE6_0'.
+  Processing 'mult_acc_64_33_16_4_0'
+ Implement Synthetic for 'mult_acc_64_33_16_4_0'.
+Information: Added key list 'DesignWare' to design 'mult_acc_64_33_16_4_0'. (DDB-72)
+  Processing 'mult_acc_24_10_16_1'
+Information: In design 'mult_acc_24_10_16_1', the register 'product_reg[32]' is removed because it is merged to 'product_reg[31]'. (OPT-1215)
+Information: In design 'mult_acc_24_10_16_1', the register 'product_reg[33]' is removed because it is merged to 'product_reg[31]'. (OPT-1215)
+Information: In design 'mult_acc_24_10_16_1', the register 'product_reg[34]' is removed because it is merged to 'product_reg[31]'. (OPT-1215)
+Information: In design 'mult_acc_24_10_16_1', the register 'product_reg[35]' is removed because it is merged to 'product_reg[31]'. (OPT-1215)
+ Implement Synthetic for 'mult_acc_24_10_16_1'.
+Information: Added key list 'DesignWare' to design 'mult_acc_24_10_16_1'. (DDB-72)
+  Processing 'mult_acc_32_9_16_2_0'
+ Implement Synthetic for 'mult_acc_32_9_16_2_0'.
+Information: Added key list 'DesignWare' to design 'mult_acc_32_9_16_2_0'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The register 'conv3/mydatapath/memY/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memY/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memY1/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY3/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY1/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv1/mydatapath/memY2/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Ungrouping hierarchy conv3/mydatapath/my_mult_acc 'mult_acc_24_10_16_1' #insts = 236. (OPT-777)
+Information: Ungrouping hierarchy conv2/mydatapath/my_mult_acc 'mult_acc_32_9_16_2_0' #insts = 248. (OPT-777)
+Information: Ungrouping hierarchy conv2/mydatapath/my_mult_acc1 'mult_acc_32_9_16_2_1' #insts = 248. (OPT-777)
+Information: Ungrouping hierarchy conv1/mydatapath/my_mult_acc 'mult_acc_64_33_16_4_0' #insts = 317. (OPT-777)
+Information: Ungrouping hierarchy conv1/mydatapath/my_mult_acc1 'mult_acc_64_33_16_4_1' #insts = 317. (OPT-777)
+Information: Ungrouping hierarchy conv1/mydatapath/my_mult_acc2 'mult_acc_64_33_16_4_2' #insts = 317. (OPT-777)
+Information: Ungrouping hierarchy conv1/mydatapath/my_mult_acc3 'mult_acc_64_33_16_4_3' #insts = 317. (OPT-777)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: The register 'conv2/mydatapath/memX/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv3/mydatapath/memX/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX1/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv2/mydatapath/memX/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:57   82126.7      1.06     294.0    2742.2                           1790821.6250
+    0:00:57   82067.6      1.03     292.0    2733.9                           1788697.3750
+    0:00:57   82067.6      1.03     292.0    2733.9                           1788697.3750
+    0:00:57   82040.5      1.03     290.6    2633.0                           1787440.8750
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Selecting critical implementations
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_0'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_1'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_2'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_3'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_4'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_5'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_6'
+  Mapping 'multi_64_33_9_10_16_8_DW01_inc_7'
+  Mapping 'multi_64_33_9_10_16_8_DP_OP_25J3_124_9559_6'
+    0:01:13   73782.3      0.36      94.5      70.4                           1521007.5000
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:13   73782.3      0.36      94.5      70.4                           1521007.5000
+    0:01:14   73782.3      0.36      94.5      70.4                           1521007.5000
+    0:01:16   73414.1      0.36      93.5      25.0                           1496625.0000
+    0:01:16   73414.1      0.36      93.5      25.0                           1496625.0000
+    0:01:20   73828.0      0.20      55.3      27.6                           1509184.2500
+    0:01:20   73828.0      0.20      55.3      27.6                           1509184.2500
+    0:01:20   73826.2      0.20      53.9      25.0                           1509173.1250
+    0:01:20   73826.2      0.20      53.9      25.0                           1509173.1250
+    0:01:21   73826.2      0.20      53.9      25.0                           1509173.1250
+    0:01:21   73826.2      0.20      53.9      25.0                           1509173.1250
+    0:01:22   74140.6      0.15      43.3      25.0                           1520196.7500
+    0:01:22   74140.6      0.15      43.3      25.0                           1520196.7500
+    0:01:22   74140.6      0.15      43.3      25.0                           1520196.7500
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:23   74140.1      0.15      43.3      25.0                           1520182.5000
+    0:01:23   74140.1      0.15      43.3      25.0                           1520182.5000
+    0:01:23   74140.1      0.15      43.3      25.0                           1520182.5000
+    0:01:23   74140.1      0.15      43.3      25.0                           1520182.5000
+    0:01:23   74140.1      0.15      43.3      25.0                           1520204.1250
+    0:01:23   74140.1      0.15      43.3      25.0                           1520204.1250
+    0:01:23   74140.1      0.15      43.3      25.0                           1520204.1250
+    0:01:23   74140.1      0.15      43.3      25.0                           1520204.1250
+    0:01:23   74140.1      0.15      43.3      25.0                           1520225.7500
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:23   74140.1      0.15      43.3      25.0                           1520225.7500
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:01:25   74159.5      0.10      31.4       0.0 conv1/mydatapath/my_mult_acc/product_reg[31]/D 1520723.5000
+    0:01:25   74162.4      0.09      30.7       0.0                           1520789.6250
+    0:01:30   74377.1      0.08      21.1       0.0                           1527745.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:30   74377.1      0.08      21.1       0.0                           1527745.0000
+    0:01:31   74358.7      0.08      21.1       0.0                           1527066.8750
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:35   74214.3      0.09      20.0       0.0                           1523205.2500
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+Information: Complementing port 'data_out[2]' in design 'memory_64_33_16_4_SIZE64_LOGSIZE6_2'.
+	 The new name of the port is 'data_out[2]_BAR'. (OPT-319)
+Information: Complementing port 'data_out[1]' in design 'memory_64_33_16_4_SIZE64_LOGSIZE6_0'.
+	 The new name of the port is 'data_out[1]_BAR'. (OPT-319)
+    0:01:42   73453.2      0.03       6.4       0.0 conv2/mydatapath/my_mult_acc1/product_reg[20]/D 1493953.2500
+    0:01:42   73499.0      0.02       2.9       0.0 conv2/mydatapath/my_mult_acc1/product_reg[34]/D 1495345.2500
+    0:01:43   73525.6      0.01       1.4       0.0                           1496117.2500
+    0:01:43   73540.8      0.01       0.9       0.0                           1496605.0000
+    0:01:43   73540.8      0.01       0.9       0.0                           1496605.0000
+    0:01:45   73524.0      0.01       1.2       0.0                           1495411.2500
+    0:01:45   73524.0      0.01       1.2       0.0                           1495411.2500
+    0:01:45   73524.0      0.01       1.2       0.0                           1495411.2500
+    0:01:45   73524.0      0.01       1.2       0.0                           1495411.2500
+    0:01:45   73524.5      0.01       1.1       0.0                           1495428.3750
+    0:01:45   73524.5      0.01       1.1       0.0                           1495428.3750
+    0:01:47   73578.5      0.00       0.1       0.0                           1497032.6250
+    0:01:47   73578.5      0.00       0.1       0.0                           1497032.6250
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:47   73609.6      0.00       0.0       0.0                           1498265.2500
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:49   73609.6      0.00       0.0       0.0                           1498265.2500
+    0:01:52   73327.4      0.01       0.6       0.0                           1488016.0000
+    0:01:52   73328.8      0.01       0.4       0.0                           1488091.2500
+    0:01:52   73328.8      0.01       0.4       0.0                           1488091.2500
+    0:01:53   73325.8      0.01       0.3       0.0                           1488056.0000
+    0:01:55   73263.8      0.01       0.4       0.0                           1486433.8750
+    0:01:56   73246.3      0.01       0.3       0.0                           1485878.1250
+    0:01:56   73314.1      0.00       0.0       0.0                           1488230.1250
+    0:01:57   73280.3      0.00       0.0       0.0                           1486595.6250
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'multi_64_33_9_10_16_8' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'conv1/mydatapath/memX2/clk': 9154 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : multi_64_33_9_10_16_8
+Version: J-2014.09-SP5-2
+Date   : Thu Dec  5 18:24:03 2019
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'multi_64_33_9_10_16_8' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           38
+Number of nets:                         26477
+Number of cells:                        21286
+Number of combinational cells:          16288
+Number of sequential cells:              4994
+Number of macros/black boxes:               0
+Number of buf/inv:                       1745
+Number of references:                      53
+
+Combinational area:              31866.534586
+Buf/Inv area:                     3449.222027
+Noncombinational area:           41413.804500
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 73280.339086
+Total area:                 undefined
+1
+report_power
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : multi_64_33_9_10_16_8
+Version: J-2014.09-SP5-2
+Date   : Thu Dec  5 18:24:05 2019
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+multi_64_33_9_10_16_8  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =  39.7404 mW   (98%)
+  Net Switching Power  = 823.0280 uW    (2%)
+                         ---------
+Total Dynamic Power    =  40.5635 mW  (100%)
+
+Cell Leakage Power     =   1.5268 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       3.9171e+04           65.9028        7.1749e+05        3.9955e+04  (  94.93%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    568.8180          757.1289        8.0929e+05        2.1352e+03  (   5.07%)
+--------------------------------------------------------------------------------------------------
+Total          3.9740e+04 uW       823.0317 uW     1.5268e+06 nW     4.2090e+04 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multi_64_33_9_10_16_8
+Version: J-2014.09-SP5-2
+Date   : Thu Dec  5 18:24:05 2019
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: conv2/mydatapath/my_rom/z_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: conv2/mydatapath/my_mult_acc/product_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multi_64_33_9_10_16_8
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  conv2/mydatapath/my_rom/z_reg[15]/CK (DFF_X1)           0.00 #     0.00 r
+  conv2/mydatapath/my_rom/z_reg[15]/Q (DFF_X1)            0.18       0.18 r
+  U22596/ZN (XNOR2_X1)                                    0.07       0.25 f
+  U14644/ZN (AOI21_X1)                                    0.06       0.31 r
+  U22624/ZN (INV_X1)                                      0.03       0.34 f
+  U22645/CO (FA_X1)                                       0.10       0.44 f
+  U22654/S (FA_X1)                                        0.14       0.58 r
+  U22674/S (FA_X1)                                        0.11       0.70 f
+  U13958/ZN (NOR2_X1)                                     0.06       0.76 r
+  U22695/ZN (OAI21_X1)                                    0.04       0.80 f
+  U22699/ZN (AOI21_X1)                                    0.06       0.86 r
+  U22784/ZN (OAI21_X1)                                    0.04       0.90 f
+  U22805/ZN (AOI21_X2)                                    0.07       0.97 r
+  U22806/ZN (OAI21_X1)                                    0.04       1.01 f
+  U22808/ZN (XNOR2_X1)                                    0.06       1.07 f
+  U22829/ZN (NOR2_X1)                                     0.04       1.12 r
+  U22833/ZN (AND2_X1)                                     0.04       1.16 r
+  U22838/ZN (AOI21_X1)                                    0.03       1.19 f
+  U22839/ZN (NOR2_X1)                                     0.07       1.25 r
+  U22852/Z (BUF_X2)                                       0.07       1.33 r
+  U22846/ZN (NAND2_X1)                                    0.04       1.37 f
+  U22847/ZN (OAI211_X1)                                   0.03       1.40 r
+  conv2/mydatapath/my_mult_acc/product_reg[5]/D (DFF_X1)
+                                                          0.01       1.41 r
+  data arrival time                                                  1.41
+
+  clock clk (rise edge)                                   1.45       1.45
+  clock network delay (ideal)                             0.00       1.45
+  conv2/mydatapath/my_mult_acc/product_reg[5]/CK (DFF_X1)
+                                                          0.00       1.45 r
+  library setup time                                     -0.04       1.41
+  data required time                                                 1.41
+  --------------------------------------------------------------------------
+  data required time                                                 1.41
+  data arrival time                                                 -1.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/fdurao/ese507work/proj3/part3/proj3/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
