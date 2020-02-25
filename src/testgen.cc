@@ -1,4 +1,3 @@
-// Peter Milder
 // Testbench Generator for Project 3, ESE 507 Fall 2019
 
 #include <iostream>
