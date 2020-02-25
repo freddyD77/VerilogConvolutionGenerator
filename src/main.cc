@@ -1,6 +1,5 @@
 // ESE 507 Project 3 Handout Code
 // Fall 2019
-// You may not redistribute this code
 
 // Getting started:
 // The main() function contains the code to read the parameters. 
