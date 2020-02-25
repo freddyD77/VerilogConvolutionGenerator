@@ -1,6 +1,5 @@
 // Peter Milder
 // Testbench Generator for Project 3, ESE 507 Fall 2019
-// This code may not be redistributed
 
 #include <iostream>
 #include <fstream>
